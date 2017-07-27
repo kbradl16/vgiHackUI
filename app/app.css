@@ -47,3 +47,17 @@
 .all-padding-3 {
   padding: 3px;
 }
+
+h3[aria-expanded=true] .fa-chevron-right {
+  display: none;
+}
+h3[aria-expanded=false] .fa-chevron-down {
+  display: none;
+}
+
+h3[aria-expanded=true] .fa-rotate-270 {
+  display: none;
+}
+h3[aria-expanded=false] .fa-flip-horizontal {
+  display: none;
+}
