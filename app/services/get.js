@@ -4,49 +4,48 @@ angular.module('myApp.get', [])
 
 .factory('gettest', ['$resource', function($resource) {
 	var service = {
-		getProduct: getProduct
+		getProducts: getProducts
 	};
 	
 	return service;
 	
 	//////////////////
 	
-	function getProduct(getProduct){
+	function getProducts(products){
 		
-		 var resource = $resource('webService/AllProducts:productId', {productId: '@id'});
+		 var resource = $resource('webService/AllProducts:getProducts', {getProducts: '@getProducts'});
 
-		 return resource.get({userId:getProduct});
-			
+		 return resource.get({getProducts: products});
 	}
-												
-	function getProjects(getProduct){
-		
-		// var resource = $resource('webService/AllProjects:productId', {productId: '@id'});
 
-		// return resource.get({userId:getProduct});
+												
+	function getProjects(projects){
+
+		var resource = $resource('webService/AllProjects:getProjects', {getProjects: '@getProjects'});
+
+		return resource.get({getProjects: projects});
 	}
 	
-	function getProjects(getProduct){
+	function getAllProjectRuns(projectRuns){
 		
-		// var resource = $resource('webService/AllProjectRuns:productId', {productId: '@id'});
+		var resource = $resource('webService/AllProjectRuns:getAllProjectRuns', {getAllProjectRuns: '@getAllProjectRuns'});
 
-		// return resource.get({userId:getProduct});
+		return resource.get({getAllProjectRuns: projectRuns});
 	}			
+																			
 												
-												
-												
-	function getProjects(getProduct){
+	function getAllProjectRuns(projectRuns){
 		
-		// var resource = $resource('webService/AllProjectRuns:productId', {productId: '@id'});
+		var resource = $resource('webService/AllProjectRuns:getAllProjectRuns', {getAllProjectRuns: '@getAllProjectRuns'});
 
-		// return resource.get({userId:getProduct});
+		return resource.get({getAllProjectRuns: projectRuns});
 	}	
 		
-	function getProjects(getProduct){
+	function getAllTestCaseRuns(testCaseRuns){
 		
-		// var resource = $resource('webService/AllTestCaseRuns:productId', {productId: '@id'});
+		var resource = $resource('webService/AllTestCaseRuns:AllTestCaseRuns', {AllTestCaseRuns: '@AllTestCaseRuns'});
 
-		// return resource.get({userId:getProduct});
+		return resource.get({AllTestCaseRuns: testCaseRuns});
 	}	
 		
 
