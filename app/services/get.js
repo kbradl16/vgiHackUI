@@ -4,26 +4,29 @@ angular.module('myApp.get', [])
 
 .factory('gettest', ['$resource', function($resource) {
 	var service = {
-		getProducts: getProducts
+		getAllProducts: getAllProducts,
+		getAllProjects: getAllProjects,
+		getAllProjectRuns: getAllProjectRuns,
+		getAllTestCaseRuns: getAllTestCaseRuns,
 	};
 	
 	return service;
 	
 	//////////////////
 	
-	function getProducts(products){
+	function getAllProducts(){
 		
-		 var resource = $resource('webService/AllProducts:getProducts', {getProducts: '@getProducts'});
+		 var resource = $resource('webService/AllProducts');
 
-		 return resource.get({getProducts: products});
+		 return resource.get();
 	}
 
 												
-	function getProjects(projects){
+	function getAllProjects(){
 
-		var resource = $resource('webService/AllProjects:getProjects', {getProjects: '@getProjects'});
+		var resource = $resource('webService/AllProjects');
 
-		return resource.get({getProjects: projects});
+		return resource.get();
 	}
 	
 	function getAllProjectRuns(projectRuns){
@@ -34,12 +37,12 @@ angular.module('myApp.get', [])
 	}			
 																			
 												
-	function getAllProjectRuns(projectRuns){
+	// function getAllProjectRuns(projectRuns){
 		
-		var resource = $resource('webService/AllProjectRuns:getAllProjectRuns', {getAllProjectRuns: '@getAllProjectRuns'});
+	// 	var resource = $resource('webService/AllProjectRuns:getAllProjectRuns', {getAllProjectRuns: '@getAllProjectRuns'});
 
-		return resource.get({getAllProjectRuns: projectRuns});
-	}	
+	// 	return resource.get({getAllProjectRuns: projectRuns});
+	// }	
 		
 	function getAllTestCaseRuns(testCaseRuns){
 		

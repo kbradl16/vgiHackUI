@@ -12,5 +12,9 @@ angular.module('myApp.view1', ['ngRoute', 'myApp.get'])
 
 .controller('View1Ctrl', ['gettest', function(gettest) {
 	this.test = "Test";
-	this.getProduct = gettest.getProducts("test");
+	this.getAllProducts = gettest.getAllProducts("test");
+	// this.getProjects = gettest.getProjects("test");
+	// this.getProduct = gettest.getProducts("test");
+	// this.getAllProjectRuns = gettest.getAllProjectRuns("test");
+	// this.getAllTestCaseRuns = gettest.getAllTestCaseRuns("test");
 }]);
