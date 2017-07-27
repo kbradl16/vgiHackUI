@@ -9,7 +9,19 @@ angular.module('myApp', [
   'myApp.version'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
-  $locationProvider.hashPrefix('!');
+  //$locationProvider.hashPrefix('!');
+  $locationProvider.html5Mode(true);
 
-  $routeProvider.otherwise({redirectTo: '/view1'});
+  $routeProvider
+    .when('/', {
+      templateUrl: 'view1/view1.html',
+      controller: 'View1Ctrl',
+      controllerAs: 'view1'
+    })
+    .when('/view2', {
+      templateUrl: 'view2/view2.html',
+      controller: 'View2Ctrl',
+      controllerAs: 'view2'
+    })
+    .otherwise({redirectTo: '/'});
 }]);
