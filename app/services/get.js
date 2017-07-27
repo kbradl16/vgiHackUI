@@ -2,10 +2,10 @@
 
 angular.module('myApp.get', [])
 
-.factory('get', [function() {
-	var service {
+.factory('gettest', ['$resource', function($resource) {
+	var service = {
 		getProduct: getProduct
-	}
+	};
 	
 	return service;
 	
@@ -13,39 +13,40 @@ angular.module('myApp.get', [])
 	
 	function getProduct(getProduct){
 		
-		var resource = $resource('webService/AllProducts:productId', {productId: '@id'});
+		 var resource = $resource('webService/AllProducts:productId', {productId: '@id'});
 
-		return resource.get({userId:getProduct}, function() {
+		 return resource.get({userId:getProduct});
+			
 	}
 												
 	function getProjects(getProduct){
 		
-		var resource = $resource('webService/AllProjects:productId', {productId: '@id'});
+		// var resource = $resource('webService/AllProjects:productId', {productId: '@id'});
 
-		return resource.get({userId:getProduct}, function() {
+		// return resource.get({userId:getProduct});
 	}
 	
 	function getProjects(getProduct){
 		
-		var resource = $resource('webService/AllProjectRuns:productId', {productId: '@id'});
+		// var resource = $resource('webService/AllProjectRuns:productId', {productId: '@id'});
 
-		return resource.get({userId:getProduct}, function() {
+		// return resource.get({userId:getProduct});
 	}			
 												
 												
 												
 	function getProjects(getProduct){
 		
-		var resource = $resource('webService/AllProjectRuns:productId', {productId: '@id'});
+		// var resource = $resource('webService/AllProjectRuns:productId', {productId: '@id'});
 
-		return resource.get({userId:getProduct}, function() {
+		// return resource.get({userId:getProduct});
 	}	
 		
 	function getProjects(getProduct){
 		
-		var resource = $resource('webService/AllTestCaseRuns:productId', {productId: '@id'});
+		// var resource = $resource('webService/AllTestCaseRuns:productId', {productId: '@id'});
 
-		return resource.get({userId:getProduct}, function() {
+		// return resource.get({userId:getProduct});
 	}	
 		
 

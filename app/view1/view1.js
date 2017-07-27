@@ -10,7 +10,7 @@ angular.module('myApp.view1', ['ngRoute', 'myApp.get'])
   });
 }])
 
-.controller('View1Ctrl', [function(get) {
+.controller('View1Ctrl', ['gettest', function(gettest) {
 	this.test = "Test";
-	this.getProduct = get.getProduct();	
+	this.getProduct = gettest.getProduct("test");
 }]);
