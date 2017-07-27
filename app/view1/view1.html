@@ -22,7 +22,18 @@
 
 <div class="container">
     <div class="starter-template">
-        <h1>Bootstrap starter template</h1>
+        <h1>Projects</h1>
         <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
     </div>
+</div>
+
+<div class="container">
+	<div ng-repeat="product in view1.productsList">
+		<a ng-href="/view2/{{product.productId}}">
+			<p>
+				<span class="lead">{{product.productName}}</span><br>
+				{{product.description}}
+			</p>
+		</a>
+	</div>
 </div>
