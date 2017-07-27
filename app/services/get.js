@@ -21,22 +21,21 @@ angular.module('myApp.get', [])
 	}
 	
 	function getAllProducts(){
+		var resource = $resource('http://localhost:8080/ssot-webservice-1.0.0-SNAPSHOT/rest/webService/products');
 		
-		 var resource = $resource('webService/AllProducts');
-
-		 return resource.get();
+ 		return resource.get(function(data){
+	 		return data;
+		});
 	}
 
 												
 	function getAllProjects(){
-
 		var resource = $resource('webService/AllProjects');
 
 		return resource.get();
 	}
 	
 	function getAllProjectRuns(projectRuns){
-		
 		var resource = $resource('webService/AllProjectRuns:getAllProjectRuns', {getAllProjectRuns: '@getAllProjectRuns'});
 
 		return resource.get({getAllProjectRuns: projectRuns});
@@ -51,7 +50,6 @@ angular.module('myApp.get', [])
 	// }	
 		
 	function getAllTestCaseRuns(testCaseRuns){
-		
 		var resource = $resource('webService/AllTestCaseRuns:AllTestCaseRuns', {AllTestCaseRuns: '@AllTestCaseRuns'});
 
 		return resource.get({AllTestCaseRuns: testCaseRuns});
