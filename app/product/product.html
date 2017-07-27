@@ -21,44 +21,47 @@
 <div class="container">
   <div class="col-md-12">
     <h1 class="text-center">FAS</h1>
-    <div class="panel panel-primary">
-      <div class="panel-heading">
-        <h2 class="d-inline-block all-margin-0 margin-bottom-3">My cool Project</h2>
-        <p class="float-right">Last Built: 2017-07-27 15:57</p>
-
-      </div>
 
 
+    <div id="projectCard">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h2 class="d-inline-block all-margin-0 margin-bottom-3">My cool Project</h2>
+          <p class="float-right">Last Built: 2017-07-27 15:57</p>
+        </div>
+        <div class="panel-body">
+          <button class="btn btn-primary float-right" type="button">History</button>
+          <div class="media">
+            <div class="media-left">
+              <i class="fa fa-link" aria-hidden="true"></i>
+            </div>
+            <div class="media-body">
+              <p class="all-margin-0 margin-bottom-3">Code URL: the code location</p>
+            </div>
+          </div>
 
-
-
-
-      <div class="panel-body">
-        <button class="btn btn-primary float-right" type="button">History</button>
-        <div class="media">
           <div class="media-left">
             <i class="fa fa-link" aria-hidden="true"></i>
           </div>
           <div class="media-body">
-            <p class="all-margin-0 margin-bottom-3">Code URL: the code location</p>
+            <p class="all-margin-0 margin-bottom-3">Build URL: the build url</p>
+          </div>
+          <div>
+            <h3 data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+              <i class="fa fa-shield fa-rotate-270"></i>
+              <i class="fa fa-shield fa-flip-horizontal"></i>
+              Test Cases
+            </h3>
+            <div class="collapse" id="collapseExample">
+              <ul>
+                <li class="text-danger">testing iS AWESOME</li>
+                <li class="text-success">another test</li>
+              </ul>
+            </div>
           </div>
         </div>
-
-        <div class="media-left">
-          <i class="fa fa-link" aria-hidden="true"></i>
-        </div>
-        <div class="media-body">
-          <p class="all-margin-0 margin-bottom-3">Build URL: the build url</p>
-        </div>
       </div>
-        <div>
-          <h3>Test Cases</h3>
-            <ul>
-              <li class="text-danger">testing iS AWESOME</li>
-              <li class="text-success">another test</li>
-            </ul>
-        </div>
-      </div>
-    </div>
+    </div> <!-- end project card-->
   </div>
 </div>
+
