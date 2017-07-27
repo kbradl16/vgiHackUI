@@ -2,8 +2,9 @@
 
 angular.module('myApp.get', [])
 
-.factory('gettest', ['$resource', function($resource) {
+.factory('get', ['$resource', function($resource) {
 	var service = {
+		testGet: testGet,
 		getAllProducts: getAllProducts,
 		getAllProjects: getAllProjects,
 		getAllProjectRuns: getAllProjectRuns,
@@ -13,6 +14,11 @@ angular.module('myApp.get', [])
 	return service;
 	
 	//////////////////
+
+	function testGet(test){
+		console.log('testing', test);
+		return test;
+	}
 	
 	function getAllProducts(){
 		
