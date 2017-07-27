@@ -21,7 +21,12 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
     .when('/view2', {
       templateUrl: 'view2/view2.html',
       controller: 'View2Ctrl',
-      controllerAs: 'view2'
+      controllerAs: 'view2',
+      resolve: {
+        data: function ($route, get) {
+           	 return get.testGet(1);
+        }
+      }
     })
     .when('/view2/:id', {
       templateUrl: 'view2/view2.html',
