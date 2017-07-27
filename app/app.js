@@ -5,7 +5,7 @@ angular.module('myApp', [
   'ngRoute',
   'ngResource',
   'myApp.view1',
-  'myApp.view2',
+  'myApp.product',
   'myApp.version',
   'myApp.get'
 ]).
@@ -18,9 +18,9 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
       controller: 'View1Ctrl',
       controllerAs: 'view1'
     })
-    .when('/view2', {
-      templateUrl: 'view2/view2.html',
-      controller: 'View2Ctrl',
+    .when('/product', {
+      templateUrl: 'product/product.html',
+      controller: 'ProductController',
       controllerAs: 'view2',
       resolve: {
         data: function ($route, get) {
@@ -28,9 +28,9 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
         }
       }
     })
-    .when('/view2/:id', {
-      templateUrl: 'view2/view2.html',
-      controller: 'View2Ctrl',
+    .when('/product/:id', {
+      templateUrl: 'product/product.html',
+      controller: 'ProductController',
       controllerAs: 'view2',
       resolve: {
         data: function ($route, get) {
