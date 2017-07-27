@@ -24,7 +24,7 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
       controllerAs: 'view2',
       resolve: {
         data: function ($route, get) {
-           	 return get.testGet(1);
+           	 return get.testGet($route.current.params.id);
         }
       }
     })

@@ -15,9 +15,9 @@ angular.module('myApp.get', [])
 	
 	//////////////////
 
-	function testGet(test){
-		console.log('testing', test);
-		return test;
+	function testGet(testId){
+		console.log('testing', testId);
+		return 'Product ' + testId;
 	}
 	
 	function getAllProducts(){
