@@ -31,10 +31,24 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
     .when('/product/:id', {
       templateUrl: 'product/product.html',
       controller: 'ProductController',
-      controllerAs: 'view2',
+      controllerAs: 'product',
       resolve: {
         data: function ($route, get) {
-           	 return get.testGet($route.current.params.id);
+        	
+        	var data = {};
+
+        	return get.getSpecificProduct($route.current.params.id).$promise.then(function(productData){
+				//return productData;
+
+				angular.forEach(productData.projectProperties, function(projectPropertiesData){
+					get.getSpecificProject(projectPropertiesData.projectId).$promise.then(function(projectData){
+						projectPropertiesData.data = projectData;
+					});
+				});
+
+				console.log('productData', productData);
+				return productData;
+        	});
         }
       }
     })
