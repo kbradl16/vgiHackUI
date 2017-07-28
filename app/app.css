@@ -48,6 +48,10 @@
   padding: 3px;
 }
 
+.padding-top-10 {
+  padding-top: 10px;
+}
+
 h3[aria-expanded=true] .fa-chevron-right {
   display: none;
 }
