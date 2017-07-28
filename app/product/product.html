@@ -12,7 +12,6 @@
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
         <li><a ng-href="view1">Home</a></li>
-        <li class="active"><a ng-href="product">Product</a></li>
       </ul>
     </div>
   </div>
@@ -20,13 +19,13 @@
 
 <div class="container">
   <div class="col-md-12">
-    <h1 class="text-center">FAS</h1>
+    <h1 class="text-center">{{view2.product.productName}}</h1>
 
 
-    <div id="projectCard">
+    <div ng-repeat="project in view2.product.projectProperties" id="projectCard">
       <div class="panel panel-primary">
         <div class="panel-heading">
-          <h2 class="d-inline-block all-margin-0 margin-bottom-3">My cool Project</h2>
+          <h2 class="d-inline-block all-margin-0 margin-bottom-3">{{project.projectName}}</h2>
           <p class="float-right">Last Built: 2017-07-27 15:57</p>
         </div>
         <div class="panel-body">
