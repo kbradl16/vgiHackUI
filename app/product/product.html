@@ -11,7 +11,7 @@
     </div>
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        <li><a ng-href="view1">Home</a></li>
+        <li><a ng-href="view1">Products</a></li>
       </ul>
     </div>
   </div>
@@ -19,13 +19,13 @@
 
 <div class="container">
   <div class="col-md-12">
-    <h1 class="text-center">{{product.data.productName}}</h1>
-
+    <h1>Product: {{product.data.productName}}</h1>
+    <br>
     <div id="projectCard" ng-repeat="project in product.data.projectProperties track by $index">
       <div class="panel panel-primary">
         <div class="panel-heading">
           <h2 class="d-inline-block all-margin-0 margin-bottom-3">
-            {{project.projectName}}
+            Project: {{project.projectName}}
           </h2>
           <p class="float-right">
             Last Built: {{project.data.builds[project.data.builds.length - 1].testCases[0].timestamp}}
@@ -47,15 +47,6 @@
           </div>
           <div class="media-body">
             <p class="all-margin-0 margin-bottom-3">Build URL: {{project.data.builds[project.data.builds.length - 1].buildURL}}</p>
-          </div>
-
-          <div class="media">
-            <div class="media-left">
-              <!-- <i class="fa fa-link" aria-hidden="true"></i> -->
-            </div>
-            <div class="media-body">
-              <p class="all-margin-0 margin-bottom-3">Build Id: {{project.data.builds[project.data.builds.length - 1].buildId}}</p>
-            </div>
           </div>
           
           <div>

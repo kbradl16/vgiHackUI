@@ -12,7 +12,7 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li><a ng-href="view1">Home</a></li>
+                <li><a ng-href="view1">Products</a></li>
             </ul>
         </div>
     </div>
@@ -20,16 +20,16 @@
 
 <div class="container">
     <div class="col-md-12">
-
-
+        <h1>Build History</h1>
+        <br>
         <div id="projectCard" class="padding-top-10">
             <div class="panel panel-primary">
                 <div class="panel-heading">
                     <h2 class="d-inline-block all-margin-0 margin-bottom-3">
-                        {{historyCtrl.projectProps.projectName}}
+                        Project: {{historyCtrl.projectProps.projectName}}
                     </h2>
                     <p class="float-right">
-                        Last Built: {{project.data.builds[project.data.builds.length - 1].testCases[0].timestamp}}
+                        Last Built: {{historyCtrl.projectProps.builds[0].testCases[0].timestamp}}
                     </p>
                 </div>
                 <div class="panel-body">
@@ -48,52 +48,39 @@
                             <p class="all-margin-0 margin-bottom-3">Build URL: {{build.buildURL}}</p>
                         </div>
 
-                        <div class="media">
-                            <div class="media-left">
-                                <!-- <i class="fa fa-link" aria-hidden="true"></i> -->
-                            </div>
-                            <div class="media-body">
-                                <p class="all-margin-0 margin-bottom-3">Build Id: {{build.buildId}}</p>
-                            </div>
-                        </div>
-
                         <div>
                             <h3 data-toggle="collapse" href="#collapseExample{{$index}}" aria-expanded="false"
                                 aria-controls="collapseExample">
                                 <i class="fa fa-shield fa-rotate-270"></i>
                                 <i class="fa fa-shield fa-flip-horizontal"></i>
-                                Test Cases
+                                Test Cases: 
+                                <span>Total: {{build.testCases.length}}</span>
                             </h3>
                             <div class="collapse" id="collapseExample{{$index}}">
-                                <ul style="padding: 0;">
-                                    <li style="list-style:none;" class="text-danger"
-                                        ng-repeat="testCase in build.testCases">
-                                        <table class="responsive-table">
-                                            <thead>
-                                            <tr>
-                                                <th scope="col">Run Status</th>
-                                                <th scope="col">Description</th>
-                                                <th scope="col">Timestamp</th>
-                                                <th scope="col">Test Location</th>
-                                            </tr>
-                                            </thead>
-                                            <tfoot>
-                                            <tr>
-                                                <td colspan="2">stuff</td>
-                                            </tr>
-                                            </tfoot>
-                                            <tbody>
-                                            <tr>
-                                                <th scope="row" ng-class="testCase.runStatus">{{testCase.runStatus}}
-                                                </th>
-                                                <td data-title="Description">{{testCase.description}}</td>
-                                                <td data-title="Timestamp">{{testCase.timestamp}}</td>
-                                                <td data-title="Build Id">{{testCase.location}}</td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                    </li>
-                                </ul>
+                                <table class="responsive-table">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">Run Status</th>
+                                        <th scope="col">Description</th>
+                                        <th scope="col">Timestamp</th>
+                                        <th scope="col">Test Location</th>
+                                    </tr>
+                                    </thead>
+                                    <tfoot>
+                                    <tr>
+                                        <td colspan="2">Number of tests: {{build.testCases.length}}</td>
+                                    </tr>
+                                    </tfoot>
+                                    <tbody>
+                                        <tr ng-repeat="testCase in build.testCases">
+                                            <th scope="row" ng-class="testCase.runStatus">{{testCase.runStatus}}
+                                            </th>
+                                            <td data-title="Description">{{testCase.description}}</td>
+                                            <td data-title="Timestamp">{{testCase.timestamp}}</td>
+                                            <td data-title="Build Id">{{testCase.location}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
 
                             <hr>
