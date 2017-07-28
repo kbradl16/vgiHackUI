@@ -65,35 +65,29 @@
               Test Cases
             </h3>
             <div class="collapse" id="collapseExample{{$index}}">
-              <ul style="padding: 0;">
-                <li style="list-style:none;" class="text-danger" ng-repeat="testCase in project.data.builds[0].testCases">
-                  <table class="responsive-table">
-                    <thead>
-                      <tr>
-                        <th scope="col">Run Status</th>
-                        <th scope="col">Description</th>
-                        <th scope="col">Test Case Id</th>
-                        <th scope="col">Timestamp</th>
-                        <th scope="col">Test Build Id</th>
-                      </tr>
-                    </thead>
-                    <tfoot>
-                      <tr>
-                        <td colspan="2">stuff</td>
-                      </tr>
-                    </tfoot>
-                    <tbody>
-                      <tr>
-                        <th scope="row" ng-class="testCase.runStatus">{{testCase.runStatus}}</th>
-                        <td data-title="Description">{{testCase.description}}</td>
-                        <td data-title="Test Case Id">{{testCase.testCaseId}}</td>  
-                        <td data-title="Timestamp">{{testCase.timestamp}}</td>
-                        <td data-title="Build Id">{{testCase.buildId}}</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </li>
-              </ul>
+              <table class="responsive-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Run Status</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Timestamp</th>
+                    <th scope="col">Test Location</th>
+                  </tr>
+                </thead>
+                <tfoot>
+                  <tr>
+                    <td colspan="2">* Latest build for {{project.projectName}}</td>
+                  </tr>
+                </tfoot>
+                <tbody>
+                  <tr ng-repeat="testCase in project.data.builds[0].testCases">
+                    <th scope="row" ng-class="testCase.runStatus">{{testCase.runStatus}}</th>
+                    <td data-title="Description">{{testCase.description}}</td> 
+                    <td data-title="Timestamp">{{testCase.timestamp}}</td>
+                    <td data-title="Test Location">{{testCase.location}}</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
