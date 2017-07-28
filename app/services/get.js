@@ -6,6 +6,7 @@ angular.module('myApp.get', [])
 	var service = {
 		testGet: testGet,
 		getAllProducts: getAllProducts,
+    getProjectById: getProjectById,
 		getSpecificProduct: getSpecificProduct,
 		getSpecificProject: getSpecificProject,
 		getAllProjectRuns: getAllProjectRuns,
@@ -30,8 +31,8 @@ angular.module('myApp.get', [])
 		});
 	}
 
-	function getProductById() {
-		return $resource(PRODUCTS_ROUTE + '/:productId');
+	function getProjectById() {
+		return $resource('http://localhost:8080/ssot-webservice-1.0.0-SNAPSHOT/rest/webService/projects/:projectId');
 	}
 
 												

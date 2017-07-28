@@ -7,7 +7,8 @@ angular.module('myApp', [
   'myApp.view1',
   'myApp.product',
   'myApp.version',
-  'myApp.get'
+  'myApp.get',
+  'myApp.history'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
   $locationProvider.html5Mode(true);
@@ -51,6 +52,11 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
         	});
         }
       }
+    })
+    .when('/history/:id', {
+      templateUrl: 'history/history.html',
+      controller: 'HistoryController',
+      controllerAs: 'historyCtrl'
     })
     .otherwise({redirectTo: '/'});
 }]);
