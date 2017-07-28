@@ -10,7 +10,8 @@ angular.module('myApp.get', [])
 		getSpecificProject: getSpecificProject,
 		getAllProjectRuns: getAllProjectRuns,
 		getAllTestCaseRuns: getAllTestCaseRuns,
-	};
+	},
+	PRODUCTS_ROUTE = 'http://localhost:8080/ssot-webservice-1.0.0-SNAPSHOT/rest/webService/products';
 	
 	return service;
 	
@@ -22,11 +23,15 @@ angular.module('myApp.get', [])
 	}
 	
 	function getAllProducts(){
-		var resource = $resource('http://localhost:8080/ssot-webservice-1.0.0-SNAPSHOT/rest/webService/products');
+		var resource = $resource(PRODUCTS_ROUTE);
 		
  		return resource.get(function(data){
 	 		return data;
 		});
+	}
+
+	function getProductById() {
+		return $resource(PRODUCTS_ROUTE + '/:productId');
 	}
 
 												
