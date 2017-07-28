@@ -6,8 +6,8 @@ angular.module('myApp.get', [])
 	var service = {
 		testGet: testGet,
 		getAllProducts: getAllProducts,
-		getProductById: getProductById,
-		getAllProjects: getAllProjects,
+		getSpecificProduct: getSpecificProduct,
+		getSpecificProject: getSpecificProject,
 		getAllProjectRuns: getAllProjectRuns,
 		getAllTestCaseRuns: getAllTestCaseRuns,
 	},
@@ -35,11 +35,23 @@ angular.module('myApp.get', [])
 	}
 
 												
-	function getAllProjects(){
-		var resource = $resource('webService/AllProjects');
+	function getSpecificProduct(productId){
+		var resource = $resource('http://localhost:8080/ssot-webservice-1.0.0-SNAPSHOT/rest/webService/products/' + productId);
 
-		return resource.get();
+ 		return resource.get(function(data){
+	 		return data;
+		});
 	}
+
+	function getSpecificProject(projectId){
+		var resource = $resource('http://localhost:8080/ssot-webservice-1.0.0-SNAPSHOT/rest/webService/projects/' + projectId);
+
+ 		return resource.get(function(data){
+	 		return data;
+		});
+	}
+
+	
 	
 	function getAllProjectRuns(projectRuns){
 		var resource = $resource('webService/AllProjectRuns:getAllProjectRuns', {getAllProjectRuns: '@getAllProjectRuns'});
