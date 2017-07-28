@@ -1,4 +1,3 @@
-//jshint strict: false
 module.exports = function(config) {
   config.set({
 
@@ -22,12 +21,16 @@ module.exports = function(config) {
       'karma-chrome-launcher',
       'karma-firefox-launcher',
       'karma-jasmine',
-      'karma-junit-reporter'
+      'karma-junit-reporter',
+      'karma-spec-reporter',
+      'karma-json-result-reporter',
+      'karma-structured-json-reporter',
     ],
 
-    junitReporter: {
-      outputFile: 'test_out/unit.xml',
-      suite: 'unit'
+    reporters: ['json-result'],
+    jsonResultReporter: {
+      outputFile: "karma-result.json",
+      isSynchronous: true //(optional, default false)
     }
 
   });
