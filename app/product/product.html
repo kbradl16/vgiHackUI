@@ -71,7 +71,7 @@
                   </tr>
                 </tfoot>
                 <tbody>
-                  <tr ng-repeat="testCase in project.data.builds[0].testCases">
+                  <tr ng-repeat="testCase in project.data.builds[project.data.builds.length - 1].testCases">
                     <th scope="row" ng-class="testCase.runStatus">{{testCase.runStatus}}</th>
                     <td data-title="Description">{{testCase.description}}</td> 
                     <td data-title="Timestamp">{{testCase.timestamp}}</td>

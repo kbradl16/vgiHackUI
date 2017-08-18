@@ -29,7 +29,7 @@
                         Project: {{historyCtrl.projectProps.projectName}}
                     </h2>
                     <p class="float-right">
-                        Last Built: {{historyCtrl.projectProps.builds[0].testCases[0].timestamp}}
+                        Last Built: {{historyCtrl.projectProps.builds[historyCtrl.projectProps.builds.length - 1].testCases[0].timestamp}}
                     </p>
                 </div>
                 <div class="panel-body">
